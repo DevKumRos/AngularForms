@@ -22,6 +22,7 @@ export class TdfFormsComponent implements OnInit {
   userModel = new User('Kumar', 'kumar@test.com', 1234567890, '', 'morning', true, this.addressModel);
   responseInfo = false;
   responseData:User;
+  errorMsg
   onFormSubmit() {
     console.log("Entered");
     this.submitted = true;
@@ -33,7 +34,10 @@ export class TdfFormsComponent implements OnInit {
       this._data.data= data; 
       this.router.navigate(['/userDetail']);  
       },
-      error=>console.log("Error !", error)  
+      error=>{
+        console.log("Error !", error);
+        this.errorMsg=error.statusText;
+      }  
       );
     
   }

@@ -1,5 +1,6 @@
 <div class="container-fluid">
 	<h1>Enrollment Form</h1>
+	<div *ngIf="errorMsg" class="alert alert-danger">{{errorMsg}}</div>
 	<div *ngIf="submitted && responseInfo">
 	Form Submitted Successfully
 		{{responseData | json}}
