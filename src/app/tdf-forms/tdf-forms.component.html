@@ -29,13 +29,13 @@
 		</div>
 		
 		<div class="form-group">
-		<label [class.text-danger]="topics.errors && topics.touched">Select Topic</label> 
-			<select class="custom-select" [(ngModel)]="userModel.topics" name="topics"
-			required #topics="ngModel" [class.is-invalid]="topics.invalid && topics.touched">
+		<label [class.text-danger]="topicType.errors && topicType.touched">Select Topic</label> 
+			<select class="custom-select" [(ngModel)]="userModel.topics" name="topicType" 
+			 required #topicType="ngModel"  [class.is-invalid]="topicType.invalid && topicType.touched"> 
 			<option value="">I am interested in</option>
 			<option *ngFor="let topic of topics">{{topic}}</option>
 			</select>
-			<small class="text-danger" [class.d-none]="topics.valid || topics.untouched">Please select option</small>
+			<small class="text-danger" [class.d-none]="topicType.valid || topicType.untouched">Please select option</small>
 		</div>
 		
 		<div class="mb-3">
@@ -78,6 +78,6 @@
 			</div>
 		</div>
 		
-		<button type="submit" class="btn btn-primary" >Submit Form</button>
+		<button [disabled]="userForm.form.invalid" type="submit" class="btn btn-primary" >Submit Form</button>
 	</form>
 </div>

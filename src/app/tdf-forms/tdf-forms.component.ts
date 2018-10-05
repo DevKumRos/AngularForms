@@ -15,6 +15,6 @@ export class TdfFormsComponent implements OnInit {
 
   topics= ['Angular', 'React', 'Vue'];
   addressModel = new Address('Vinayaka', 'Bangalore', 'Karntaka', 560032);
-  userModel = new User('', 'kumar@test.com', 1234567, '', 'morning', true, this.addressModel);
+  userModel = new User('Kumar', 'kumar@test.com', 1234567890, '', 'morning', true, this.addressModel);
   
 }
