@@ -9,9 +9,10 @@ import { DataStorage } from './data-storage';
 import { EnrollementService } from './enrollement.service';
 import { TdfFormsComponent } from './tdf-forms/tdf-forms.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 
 
 @NgModule({
@@ -19,13 +20,15 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     AppComponent,
     TdfFormsComponent,
     UserDetailComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ReactiveFormsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [EnrollementService, DataStorage],
   bootstrap: [AppComponent]
