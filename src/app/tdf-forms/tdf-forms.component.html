@@ -1,10 +1,10 @@
 <div class="container-fluid">
 	<h1>Enrollment Form</h1>
-	<form #userForm="ngForm">
+	<form #userForm="ngForm" (ngSubmit)="onFormSubmit()" novalidate>
 	<!-- {{userForm.value | json}}
 	<hr/>
 	{{userModel | json}} -->
-		<div class="form-group">
+		<div class="form-group"  >
 			<label [class.text-danger]="userName.invalid && userName.touched">UserName</label> 
 			<input type="text" required  #userName="ngModel" [class.is-invalid]="userName.invalid && userName.touched" class="form-control" [(ngModel)]="userModel.userName" name="userName">
 			<small class="text-danger" [class.d-none]="userName.valid || userName.untouched">userName is required</small>

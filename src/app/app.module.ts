@@ -4,7 +4,9 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { EnrollementService } from './enrollement.service';
 import { TdfFormsComponent } from './tdf-forms/tdf-forms.component';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 
@@ -15,9 +17,10 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [EnrollementService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

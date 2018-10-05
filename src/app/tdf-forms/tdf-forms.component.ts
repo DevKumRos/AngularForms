@@ -1,3 +1,4 @@
+import { EnrollementService } from '../enrollement.service';
 import { User, Address } from '../user';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TdfFormsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private enrollService : EnrollementService) { }
 
   ngOnInit() {
   }
@@ -17,4 +18,13 @@ export class TdfFormsComponent implements OnInit {
   addressModel = new Address('Vinayaka', 'Bangalore', 'Karntaka', 560032);
   userModel = new User('Kumar', 'kumar@test.com', 1234567890, '', 'morning', true, this.addressModel);
   
+  onFormSubmit() {
+    console.log("Entered");
+    this.enrollService.enroll(this.userModel)
+      .subscribe(
+      data=> console.log("Success !", data),
+      error=>console.log("Error !", error)  
+      );
+    
+  }
 }
