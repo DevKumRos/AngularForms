@@ -13,6 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
+import { ReactiveForm1Component } from './reactive-form1/reactive-form1.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.componen
     TdfFormsComponent,
     UserDetailComponent,
     PageNotFoundComponent,
-    ReactiveFormsComponent
+    ReactiveFormsComponent,
+    ReactiveForm1Component
   ],
   imports: [
     BrowserModule,

@@ -1,8 +1,8 @@
 <div class="container-fluid">
 	<h2>Registration Form</h2>
 	
-	<form [formGroup]="newRegisterationForm">
-	{{newRegisterationForm.value | json}}
+	<form [formGroup]="registerationForm">
+	{{registerationForm.value | json}}
 		<div class="form-group">
 			<label>UserName</label> 
 			<input formControlName="userName" type="text" class="form-control">
