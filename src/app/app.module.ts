@@ -14,6 +14,7 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 import { ReactiveForm1Component } from './reactive-form1/reactive-form1.component';
+import { ReactFormCustomValidationComponent } from './react-form-custom-validation/react-form-custom-validation.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { ReactiveForm1Component } from './reactive-form1/reactive-form1.componen
     UserDetailComponent,
     PageNotFoundComponent,
     ReactiveFormsComponent,
-    ReactiveForm1Component
+    ReactiveForm1Component,
+    ReactFormCustomValidationComponent
   ],
   imports: [
     BrowserModule,
