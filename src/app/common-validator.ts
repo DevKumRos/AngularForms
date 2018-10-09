@@ -38,6 +38,7 @@ export class CommonValidator {
   }
   
   static confirmPasswordValidator(control: AbstractControl) :{[key: string]:boolean} | null {
+    
     if(control.value !== undefined ) {
       let passwordStr = "";
       if(control.root !== undefined){
@@ -62,4 +63,13 @@ export class CommonValidator {
     return null;
   }
   
+}
+
+// Form level validation
+export function passordCheckValidator(control: AbstractControl) :{[key: string]:boolean} | null {
+  const confirmStr = control.get('confirmPassword');
+    const passwordStr1 = control.get('password');
+    if(passwordStr1 && confirmStr)
+    console.log("password:",passwordStr1.value,", confirmPassword:",confirmStr.value);
+  return null
 }

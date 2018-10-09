@@ -2,7 +2,6 @@
 	<h2>Registration Form</h2>
 	
 	<form [formGroup]="custValidationForm">
-	{{custValidationForm.value | json}}
 		<div class="form-group">
 			<label [class.text-danger]="f.email.errors && f.email.touched">Email</label>
 			<input formControlName="email" type="text" class="form-control">

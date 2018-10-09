@@ -1,4 +1,4 @@
-import { CommonValidator } from '../common-validator';
+import { CommonValidator, passordCheckValidator } from '../common-validator';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
 
@@ -19,7 +19,7 @@ export class ReactFormCustomValidationComponent implements OnInit {
       confirmPassword : ['', [Validators.required, CommonValidator.confirmPasswordValidator]],
       age : ['', [Validators.required, CommonValidator.ageRangeValidator]]
         
-    });
+    },{validator : passordCheckValidator}); // providing validation on form 2 parameter
     
   }
   
