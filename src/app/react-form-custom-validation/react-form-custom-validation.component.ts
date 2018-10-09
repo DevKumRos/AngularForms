@@ -10,16 +10,30 @@ import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/fo
 export class ReactFormCustomValidationComponent implements OnInit {
 
   constructor(private fb:FormBuilder) { }
-
+  public custValidationForm;
   ngOnInit() {
     this.custValidationForm = this.fb.group({
     
       email:['', [Validators.required, CommonValidator.emailValidator]],
       password : ['', [Validators.required, CommonValidator.passwordValidator]],
       confirmPassword : ['', [Validators.required, CommonValidator.confirmPasswordValidator]],
-      age : ['', [Validators.required, CommonValidator.ageRangeValidator]]
+      age : ['', [Validators.required, CommonValidator.ageRangeValidator]],
+      userName:[''],
+      subscribe:[false]
         
     },{validator : passordCheckValidator}); // providing validation on form 2 parameter
+    
+    //condition validation
+    this.custValidationForm.get('subscribe').valueChanges
+    .subscribe(checkedValue=>{
+    const userName = this.custValidationForm.get('userName');
+      if(userName) {
+        userName.setValidators(Validators.required);
+      } else {
+        userName.clearValidators();
+      }
+      userName.updateValueAndValidity();
+    });
     
   }
   
@@ -27,7 +41,7 @@ export class ReactFormCustomValidationComponent implements OnInit {
     return this.custValidationForm.controls;  
   }
 
-  public custValidationForm;
+
   /*
   confirmPasswordValidator() {
     let passwordStr = "";
