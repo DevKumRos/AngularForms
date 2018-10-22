@@ -1,4 +1,5 @@
 import { CommonValidator, passordCheckValidator } from '../common-validator';
+import { CustomRegisterationService } from '../custom-registeration.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
 
@@ -9,7 +10,7 @@ import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/fo
 })
 export class ReactFormCustomValidationComponent implements OnInit {
 
-  constructor(private fb:FormBuilder) { }
+  constructor(private fb:FormBuilder, private registerService: CustomRegisterationService) { }
   public custValidationForm;
   ngOnInit() {
     this.custValidationForm = this.fb.group({
@@ -39,6 +40,15 @@ export class ReactFormCustomValidationComponent implements OnInit {
   
   get f(){
     return this.custValidationForm.controls;  
+  }
+  
+  OnSubmit() {
+    console.log(this.custValidationForm.value);
+    this.registerService.register(this.custValidationForm.value)
+      .subscribe(
+        response => console.log("success", response),   
+        error => console.log("Error", error)   
+      );
   }
 
 

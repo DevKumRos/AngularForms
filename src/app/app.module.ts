@@ -5,6 +5,7 @@ import { AppRoutingModule, routingComponent } from './app-routing.module';
 
 
 import { AppComponent } from './app.component';
+import { CustomRegisterationService } from './custom-registeration.service';
 import { DataStorage } from './data-storage';
 import { EnrollementService } from './enrollement.service';
 import { TdfFormsComponent } from './tdf-forms/tdf-forms.component';
@@ -34,7 +35,7 @@ import { ReactFormCustomValidationComponent } from './react-form-custom-validati
     AppRoutingModule,
     ReactiveFormsModule
   ],
-  providers: [EnrollementService, DataStorage],
+  providers: [EnrollementService, DataStorage, CustomRegisterationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
